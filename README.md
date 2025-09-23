@@ -1,6 +1,25 @@
-# Strategies-for-Scaling-Up-RL-Based-Multiplier-Architectures-to-Higher-Bit-widths
-Digital multiplication algorithms are typically developed through inflexible procedures, which restricts the discovery of alternative architectures tailored to particular constraints or specialized use cases. In contrast, a reinforcement learning–driven method enables automated exploration of the design space for digital multiplication algorithms.
+# Reinforcement Learning for Digital Multiplication Architectures
 
-The aforementioned procedure can be carried out by making an agent engage with an environment framed as a sequential decision-making task, thus acquiring strategies that produce functional architectures with less than 10\% error, without depending on predefined multiplication rules. The computing resources for this task grow rapidly as the input bits augment due to the exponential nature of the possible multiplications ($2^{2n}$ with two n bit inputs), making the automated design space exploration difficult to scale up.
+## Overview
+Digital multiplication algorithms are typically developed through rigid procedures that limit the discovery of alternative architectures tailored to specific constraints or specialized use cases.  
+In contrast, a reinforcement learning (RL)–driven approach enables automated exploration of the design space for digital multiplication algorithms.
 
-This work proposes three combinational strategies to scale up 2 bit inexact array multipliers architectures that were automatically obtained through Reinforcement Learning techniques up to 8 bit multipliers, allowing a partial exploration of the design space without the vast computational expenses needed for a Reinforcement Learning counterpart. Furthermore, the relevance of the proposed approach is demonstrated through the implementation of Gaussian filters in SystemVerilog, where the scaled multipliers are converted from Verilog into modules integrated as the core arithmetic components of the filters. This application highlights not only the feasibility of the scaling methodology but also its potential for advancing efficient hardware implementations in digital signal processing.
+## Methodology
+The proposed procedure is modeled as a sequential decision-making task, where an RL agent interacts with an environment to acquire strategies that generate functional architectures.  
+This method achieves multipliers with less than 10% error without relying on predefined multiplication rules.  
+
+However, as the number of input bits increases, the computational cost grows exponentially (due to the $2^{2n}$ possible multiplications for two n-bit inputs). This makes large-scale automated exploration computationally expensive and difficult to scale.
+
+## Proposed Strategies
+To address this limitation, three combinational strategies are introduced to scale 2-bit inexact array multipliers—originally obtained via reinforcement learning—up to 8-bit multipliers.  
+This approach enables partial exploration of the design space while avoiding the vast computational overhead required by reinforcement learning for larger bit-widths.
+
+## Application
+The scaled multipliers are integrated into **Gaussian filters** implemented in **SystemVerilog**.  
+The multipliers, converted from Verilog into reusable modules, serve as the core arithmetic components of the filters.  
+
+This application demonstrates:
+- The feasibility of the scaling methodology.  
+- The potential of this approach to advance efficient hardware implementations in **digital signal processing (DSP)**.
+
+---
