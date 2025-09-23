@@ -1,0 +1,2 @@
+# Strategies-for-Scaling-Up-RL-Based-Multiplier-Architectures-to-Higher-Bit-widths
+This work proposes three combinational strategies to scale up 2 bit inexact array multipliers architectures that were automatically obtained through Reinforcement Learning techniques up to 8 bit multipliers, allowing a partial exploration of the design space without the vast computational expenses needed for a Reinforcement Learning counterpart.
