@@ -1,5 +1,4 @@
-# Reinforcement Learning for Digital Multiplication Architectures
-
+# Strategies for Scaling Up RL-Based Multiplier Architectures to Higher Bit-widths
 ## Overview
 Digital multiplication algorithms are typically developed through rigid procedures that limit the discovery of alternative architectures tailored to specific constraints or specialized use cases.  
 In contrast, a reinforcement learning (RL)–driven approach enables automated exploration of the design space for digital multiplication algorithms.
