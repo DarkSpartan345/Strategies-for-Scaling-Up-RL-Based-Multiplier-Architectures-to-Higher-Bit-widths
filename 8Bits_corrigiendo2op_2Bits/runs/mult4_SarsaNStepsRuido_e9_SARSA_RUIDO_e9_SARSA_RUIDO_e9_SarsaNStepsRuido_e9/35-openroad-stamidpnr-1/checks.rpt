@@ -1,0 +1,99 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: A[3] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: P[7] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 v input external delay
+     1    0.002114    0.007057    0.003258    2.003258 v A[3] (in)
+                                                         A[3] (net)
+                      0.007057    0.000000    2.003258 v input4/A (sky130_fd_sc_hd__dlymetal6s2s_1)
+     7    0.016470    0.094209    0.172584    2.175842 v input4/X (sky130_fd_sc_hd__dlymetal6s2s_1)
+                                                         net4 (net)
+                      0.094209    0.000037    2.175879 v _080_/C (sky130_fd_sc_hd__and3_1)
+     3    0.007910    0.060463    0.221582    2.397461 v _080_/X (sky130_fd_sc_hd__and3_1)
+                                                         _028_ (net)
+                      0.060463    0.000011    2.397473 v _083_/A (sky130_fd_sc_hd__or3_1)
+     2    0.007321    0.093013    0.402606    2.800079 v _083_/X (sky130_fd_sc_hd__or3_1)
+                                                         _031_ (net)
+                      0.093013    0.000016    2.800095 v _088_/A (sky130_fd_sc_hd__xor2_1)
+     2    0.007497    0.200901    0.225309    3.025404 ^ _088_/X (sky130_fd_sc_hd__xor2_1)
+                                                         _036_ (net)
+                      0.200901    0.000037    3.025440 ^ _089_/B (sky130_fd_sc_hd__xnor2_1)
+     2    0.006686    0.197251    0.171667    3.197107 ^ _089_/Y (sky130_fd_sc_hd__xnor2_1)
+                                                         _037_ (net)
+                      0.197251    0.000012    3.197119 ^ _092_/D_N (sky130_fd_sc_hd__or4b_1)
+     2    0.004715    0.097853    0.470843    3.667962 v _092_/X (sky130_fd_sc_hd__or4b_1)
+                                                         _039_ (net)
+                      0.097853    0.000016    3.667978 v _099_/A1 (sky130_fd_sc_hd__a21oi_1)
+     2    0.006195    0.172290    0.186967    3.854945 ^ _099_/Y (sky130_fd_sc_hd__a21oi_1)
+                                                         _046_ (net)
+                      0.172290    0.000012    3.854957 ^ _102_/C1 (sky130_fd_sc_hd__a211o_1)
+     1    0.002296    0.037551    0.115099    3.970056 ^ _102_/X (sky130_fd_sc_hd__a211o_1)
+                                                         net15 (net)
+                      0.037551    0.000007    3.970062 ^ output15/A (sky130_fd_sc_hd__buf_2)
+     1    0.034110    0.169367    0.194976    4.165039 ^ output15/X (sky130_fd_sc_hd__buf_2)
+                                                         P[7] (net)
+                      0.169367    0.000111    4.165149 ^ P[7] (out)
+                                              4.165149   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -4.165149   data arrival time
+---------------------------------------------------------------------------------------------
+                                              3.584851   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 1 unannotated drivers.
+ mult4_SarsaNStepsRuido_e9_SARSA_RUIDO_e9_SARSA_RUIDO_e9_SarsaNStepsRuido_e9_16/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_1v80: 0
+max fanout violation count 0
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_1v80: 0
+max cap violation count 0
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_1v80: 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 unconstrained endpoint.
+  P[0]
