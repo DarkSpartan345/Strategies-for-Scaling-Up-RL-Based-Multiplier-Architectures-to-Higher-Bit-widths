@@ -37,7 +37,7 @@ if not design_files:
 # Intentos adaptativos: cada entrada es un ajuste a poner en config.json.
 # Las entradas con None serán omitidas (se deja comportamiento por defecto).
 attempts = [
-    {"FP_CORE_UTIL": None, "DIE_AREA": "0 0 50 50"},                # intento 0: default
+    {"FP_CORE_UTIL": None, "DIE_AREA": "0 0 50 50"},         # intento 0: default
     {"FP_CORE_UTIL": 70, "DIE_AREA": "0 0 200 200"},         # intento 1: un poco más espacio
     {"FP_CORE_UTIL": 60, "DIE_AREA": "0 0 400 400"},         # intento 2: más espacio
     {"FP_CORE_UTIL": 50, "DIE_AREA": "0 0 800 800"},         # intento 3: área grande
