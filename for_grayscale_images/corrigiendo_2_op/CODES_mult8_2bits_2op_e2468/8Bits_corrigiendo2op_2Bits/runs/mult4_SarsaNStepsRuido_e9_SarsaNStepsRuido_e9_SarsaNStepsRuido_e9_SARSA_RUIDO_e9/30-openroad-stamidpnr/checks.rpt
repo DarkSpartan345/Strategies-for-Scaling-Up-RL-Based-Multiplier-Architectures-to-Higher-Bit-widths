@@ -1,0 +1,96 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: B[1] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: P[7] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 ^ input external delay
+     9    0.034136    0.158684    0.109688    2.109689 ^ B[1] (in)
+                                                         B[1] (net)
+                      0.158684    0.000000    2.109689 ^ _52_/D (sky130_fd_sc_hd__and4_2)
+     2    0.007168    0.073433    0.258623    2.368311 ^ _52_/X (sky130_fd_sc_hd__and4_2)
+                                                         _05_ (net)
+                      0.073433    0.000008    2.368319 ^ _60_/D_N (sky130_fd_sc_hd__or4b_2)
+     3    0.011803    0.137452    0.646248    3.014568 v _60_/X (sky130_fd_sc_hd__or4b_2)
+                                                         _12_ (net)
+                      0.137452    0.000022    3.014590 v _62_/A (sky130_fd_sc_hd__nand2_2)
+     2    0.006464    0.060807    0.098427    3.113017 ^ _62_/Y (sky130_fd_sc_hd__nand2_2)
+                                                         _14_ (net)
+                      0.060807    0.000012    3.113029 ^ _63_/D (sky130_fd_sc_hd__or4_2)
+     3    0.008926    0.058281    0.127885    3.240914 ^ _63_/X (sky130_fd_sc_hd__or4_2)
+                                                         _15_ (net)
+                      0.058281    0.000012    3.240925 ^ _75_/A2 (sky130_fd_sc_hd__a21o_2)
+     3    0.013831    0.078588    0.157286    3.398211 ^ _75_/X (sky130_fd_sc_hd__a21o_2)
+                                                         _26_ (net)
+                      0.078588    0.000083    3.398293 ^ _86_/A_N (sky130_fd_sc_hd__and2b_2)
+     2    0.007272    0.046342    0.229346    3.627640 v _86_/X (sky130_fd_sc_hd__and2b_2)
+                                                         _37_ (net)
+                      0.046342    0.000025    3.627665 v _94_/A2 (sky130_fd_sc_hd__o21ba_2)
+     1    0.002863    0.035384    0.188855    3.816520 v _94_/X (sky130_fd_sc_hd__o21ba_2)
+                                                         _44_ (net)
+                      0.035384    0.000008    3.816528 v _96_/C1 (sky130_fd_sc_hd__a211o_2)
+     1    0.034399    0.125242    0.358537    4.175066 v _96_/X (sky130_fd_sc_hd__a211o_2)
+                                                         P[7] (net)
+                      0.125242    0.000144    4.175210 v P[7] (out)
+                                              4.175210   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -4.175210   data arrival time
+---------------------------------------------------------------------------------------------
+                                              3.574790   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 1 unannotated drivers.
+ _99_/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_1v80: 0
+max fanout violation count 0
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_1v80: 0
+max cap violation count 0
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_1v80: 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 unconstrained endpoint.
+  P[0]

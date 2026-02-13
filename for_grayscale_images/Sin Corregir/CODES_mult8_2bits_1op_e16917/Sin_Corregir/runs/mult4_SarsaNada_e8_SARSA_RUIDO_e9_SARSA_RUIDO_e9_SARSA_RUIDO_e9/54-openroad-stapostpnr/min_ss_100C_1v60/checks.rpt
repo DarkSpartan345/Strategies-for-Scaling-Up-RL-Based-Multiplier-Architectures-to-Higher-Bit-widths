@@ -1,0 +1,90 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= min_ss_100C_1v60 Corner ===================================
+
+Startpoint: A[0] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: P[7] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 v input external delay
+     1    0.002123    0.015901    0.007084    2.007084 v A[0] (in)
+                                                         A[0] (net)
+                      0.015901    0.000000    2.007084 v input1/A (sky130_fd_sc_hd__dlymetal6s2s_1)
+     7    0.018287    0.195792    0.368215    2.375299 v input1/X (sky130_fd_sc_hd__dlymetal6s2s_1)
+                                                         net1 (net)
+                      0.195792    0.000182    2.375481 v _28_/B2 (sky130_fd_sc_hd__a22o_1)
+     2    0.005279    0.092814    0.430106    2.805587 v _28_/X (sky130_fd_sc_hd__a22o_1)
+                                                         _03_ (net)
+                      0.092814    0.000035    2.805622 v _30_/C (sky130_fd_sc_hd__and3_1)
+     3    0.008849    0.120005    0.425139    3.230761 v _30_/X (sky130_fd_sc_hd__and3_1)
+                                                         _05_ (net)
+                      0.120005    0.000126    3.230887 v _41_/A2 (sky130_fd_sc_hd__o211a_1)
+     4    0.012717    0.158941    0.487348    3.718235 v _41_/X (sky130_fd_sc_hd__o211a_1)
+                                                         _15_ (net)
+                      0.158941    0.000153    3.718388 v _51_/B1 (sky130_fd_sc_hd__a221o_1)
+     2    0.007669    0.138266    0.630884    4.349272 v _51_/X (sky130_fd_sc_hd__a221o_1)
+                                                         _23_ (net)
+                      0.138266    0.000068    4.349340 v _52_/C (sky130_fd_sc_hd__and3_1)
+     1    0.001935    0.063721    0.381044    4.730384 v _52_/X (sky130_fd_sc_hd__and3_1)
+                                                         net15 (net)
+                      0.063721    0.000017    4.730401 v output15/A (sky130_fd_sc_hd__buf_2)
+     1    0.034336    0.166129    0.342101    5.072502 v output15/X (sky130_fd_sc_hd__buf_2)
+                                                         P[7] (net)
+                      0.166129    0.000391    5.072893 v P[7] (out)
+                                              5.072893   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -5.072893   data arrival time
+---------------------------------------------------------------------------------------------
+                                              2.677107   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= min_ss_100C_1v60 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= min_ss_100C_1v60 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 1 unannotated drivers.
+ mult4_SarsaNada_e8_SARSA_RUIDO_e9_SARSA_RUIDO_e9_SARSA_RUIDO_e9_16/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 unconstrained endpoint.
+  P[0]

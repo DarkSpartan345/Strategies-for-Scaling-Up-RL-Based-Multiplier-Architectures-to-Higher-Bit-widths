@@ -1,0 +1,78 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+Startpoint: B[1] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: P[0] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 v input external delay
+     1    0.002216    0.016245    0.007433    2.007433 v B[1] (in)
+                                                         B[1] (net)
+                      0.016245    0.000000    2.007433 v input4/A (sky130_fd_sc_hd__dlymetal6s2s_1)
+     4    0.015696    0.174392    0.351136    2.358569 v input4/X (sky130_fd_sc_hd__dlymetal6s2s_1)
+                                                         net4 (net)
+                      0.174392    0.000699    2.359268 v _4_/A (sky130_fd_sc_hd__and4_1)
+     2    0.005110    0.092432    0.373499    2.732767 v _4_/X (sky130_fd_sc_hd__and4_1)
+                                                         net8 (net)
+                      0.092432    0.000291    2.733058 v _5_/B1 (sky130_fd_sc_hd__a21o_1)
+     1    0.002611    0.058262    0.280824    3.013882 v _5_/X (sky130_fd_sc_hd__a21o_1)
+                                                         net5 (net)
+                      0.058262    0.000161    3.014042 v output5/A (sky130_fd_sc_hd__buf_2)
+     1    0.034203    0.166000    0.338268    3.352310 v output5/X (sky130_fd_sc_hd__buf_2)
+                                                         P[0] (net)
+                      0.166016    0.001704    3.354014 v P[0] (out)
+                                              3.354014   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -3.354014   data arrival time
+---------------------------------------------------------------------------------------------
+                                              4.395986   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

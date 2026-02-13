@@ -1,0 +1,99 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: A[3] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: P[7] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 ^ input external delay
+     1    0.004028    0.025058    0.014625    2.014625 ^ A[3] (in)
+                                                         A[3] (net)
+                      0.025066    0.000000    2.014625 ^ input4/A (sky130_fd_sc_hd__buf_1)
+     6    0.017143    0.205835    0.186816    2.201442 ^ input4/X (sky130_fd_sc_hd__buf_1)
+                                                         net4 (net)
+                      0.205836    0.000396    2.201838 ^ _50_/B (sky130_fd_sc_hd__and3_1)
+     5    0.016945    0.175193    0.283128    2.484966 ^ _50_/X (sky130_fd_sc_hd__and3_1)
+                                                         _03_ (net)
+                      0.175193    0.000488    2.485454 ^ _68_/S (sky130_fd_sc_hd__mux2_1)
+     2    0.008516    0.083473    0.377321    2.862775 v _68_/X (sky130_fd_sc_hd__mux2_1)
+                                                         _20_ (net)
+                      0.083473    0.000312    2.863087 v _70_/B (sky130_fd_sc_hd__xor2_1)
+     2    0.008805    0.079609    0.176651    3.039738 v _70_/X (sky130_fd_sc_hd__xor2_1)
+                                                         _22_ (net)
+                      0.079609    0.000263    3.040001 v _80_/A3 (sky130_fd_sc_hd__a31o_1)
+     2    0.006304    0.052460    0.242266    3.282267 v _80_/X (sky130_fd_sc_hd__a31o_1)
+                                                         _32_ (net)
+                      0.052460    0.000132    3.282399 v _82_/B (sky130_fd_sc_hd__xor2_1)
+     2    0.007578    0.082991    0.159712    3.442111 v _82_/X (sky130_fd_sc_hd__xor2_1)
+                                                         _34_ (net)
+                      0.082991    0.000163    3.442274 v _83_/B (sky130_fd_sc_hd__and2b_1)
+     2    0.006826    0.050824    0.187008    3.629282 v _83_/X (sky130_fd_sc_hd__and2b_1)
+                                                         _35_ (net)
+                      0.050824    0.000195    3.629477 v _91_/A2 (sky130_fd_sc_hd__o21ba_1)
+     1    0.003288    0.037798    0.167641    3.797118 v _91_/X (sky130_fd_sc_hd__o21ba_1)
+                                                         _42_ (net)
+                      0.037798    0.000083    3.797201 v _93_/C1 (sky130_fd_sc_hd__a211o_1)
+     1    0.001861    0.041949    0.210293    4.007494 v _93_/X (sky130_fd_sc_hd__a211o_1)
+                                                         net16 (net)
+                      0.041949    0.000037    4.007531 v output16/A (sky130_fd_sc_hd__buf_2)
+     1    0.034670    0.090519    0.179319    4.186851 v output16/X (sky130_fd_sc_hd__buf_2)
+                                                         P[7] (net)
+                      0.090528    0.000931    4.187781 v P[7] (out)
+                                              4.187781   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -4.187781   data arrival time
+---------------------------------------------------------------------------------------------
+                                              3.562219   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_1v80: 0
+max fanout violation count 0
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_1v80: 0
+max cap violation count 0
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_1v80: 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

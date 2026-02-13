@@ -1,0 +1,99 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+Startpoint: B[0] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: P[7] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 ^ input external delay
+     1    0.002579    0.030791    0.014664    2.014664 ^ B[0] (in)
+                                                         B[0] (net)
+                      0.030791    0.000000    2.014664 ^ input5/A (sky130_fd_sc_hd__dlymetal6s2s_1)
+     7    0.022084    0.357888    0.350286    2.364950 ^ input5/X (sky130_fd_sc_hd__dlymetal6s2s_1)
+                                                         net5 (net)
+                      0.357892    0.000915    2.365865 ^ _55_/A (sky130_fd_sc_hd__and3_1)
+     5    0.017886    0.291097    0.559250    2.925115 ^ _55_/X (sky130_fd_sc_hd__and3_1)
+                                                         _07_ (net)
+                      0.291097    0.000569    2.925684 ^ _71_/S (sky130_fd_sc_hd__mux2_1)
+     2    0.007897    0.158341    0.841595    3.767279 v _71_/X (sky130_fd_sc_hd__mux2_1)
+                                                         _22_ (net)
+                      0.158341    0.000553    3.767832 v _73_/B (sky130_fd_sc_hd__xor2_1)
+     2    0.007773    0.158608    0.337890    4.105722 v _73_/X (sky130_fd_sc_hd__xor2_1)
+                                                         _24_ (net)
+                      0.158608    0.000474    4.106196 v _83_/A3 (sky130_fd_sc_hd__a31o_1)
+     2    0.006885    0.099673    0.460906    4.567103 v _83_/X (sky130_fd_sc_hd__a31o_1)
+                                                         _34_ (net)
+                      0.099673    0.000466    4.567569 v _85_/B (sky130_fd_sc_hd__xor2_1)
+     2    0.007484    0.164362    0.311925    4.879493 v _85_/X (sky130_fd_sc_hd__xor2_1)
+                                                         _36_ (net)
+                      0.164362    0.000454    4.879947 v _86_/B (sky130_fd_sc_hd__and2b_1)
+     2    0.005618    0.088716    0.389120    5.269068 v _86_/X (sky130_fd_sc_hd__and2b_1)
+                                                         _37_ (net)
+                      0.088716    0.000222    5.269289 v _94_/A2 (sky130_fd_sc_hd__o21ba_1)
+     1    0.003237    0.067845    0.318205    5.587494 v _94_/X (sky130_fd_sc_hd__o21ba_1)
+                                                         _44_ (net)
+                      0.067845    0.000141    5.587635 v _96_/C1 (sky130_fd_sc_hd__a211o_1)
+     1    0.002219    0.079479    0.416450    6.004086 v _96_/X (sky130_fd_sc_hd__a211o_1)
+                                                         net15 (net)
+                      0.079479    0.000158    6.004243 v output15/A (sky130_fd_sc_hd__buf_2)
+     1    0.034126    0.165575    0.347790    6.352033 v output15/X (sky130_fd_sc_hd__buf_2)
+                                                         P[7] (net)
+                      0.165589    0.001640    6.353673 v P[7] (out)
+                                              6.353673   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -6.353673   data arrival time
+---------------------------------------------------------------------------------------------
+                                              1.396327   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 1 unannotated drivers.
+ mult4_SarsaNStepsRuido_e9_SarsaNStepsRuido_e9_SarsaNStepsRuido_e9_SARSA_RUIDO_e9_16/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 unconstrained endpoint.
+  P[0]

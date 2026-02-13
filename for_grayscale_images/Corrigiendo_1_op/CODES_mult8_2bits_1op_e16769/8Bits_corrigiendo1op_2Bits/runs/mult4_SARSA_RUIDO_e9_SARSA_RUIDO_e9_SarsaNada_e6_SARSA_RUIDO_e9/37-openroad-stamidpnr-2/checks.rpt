@@ -1,0 +1,99 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: A[2] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: P[6] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 v input external delay
+     1    0.002090    0.006999    0.003216    2.003216 v A[2] (in)
+                                                         A[2] (net)
+                      0.006999    0.000000    2.003216 v input3/A (sky130_fd_sc_hd__dlymetal6s2s_1)
+     7    0.015452    0.089824    0.168899    2.172115 v input3/X (sky130_fd_sc_hd__dlymetal6s2s_1)
+                                                         net3 (net)
+                      0.089824    0.000020    2.172135 v _061_/D (sky130_fd_sc_hd__and4_1)
+     5    0.014102    0.085443    0.264166    2.436301 v _061_/X (sky130_fd_sc_hd__and4_1)
+                                                         _010_ (net)
+                      0.085443    0.000031    2.436332 v _063_/C (sky130_fd_sc_hd__or4_2)
+     4    0.010168    0.132770    0.663640    3.099971 v _063_/X (sky130_fd_sc_hd__or4_2)
+                                                         _012_ (net)
+                      0.132770    0.000021    3.099992 v _066_/A1 (sky130_fd_sc_hd__a21bo_1)
+     2    0.004191    0.041915    0.203572    3.303564 v _066_/X (sky130_fd_sc_hd__a21bo_1)
+                                                         _015_ (net)
+                      0.041915    0.000005    3.303570 v _075_/B (sky130_fd_sc_hd__and3_1)
+     5    0.013072    0.079613    0.203485    3.507054 v _075_/X (sky130_fd_sc_hd__and3_1)
+                                                         _024_ (net)
+                      0.079613    0.000008    3.507063 v _081_/A (sky130_fd_sc_hd__nor3_1)
+     2    0.005056    0.209427    0.232822    3.739885 ^ _081_/Y (sky130_fd_sc_hd__nor3_1)
+                                                         _030_ (net)
+                      0.209427    0.000004    3.739888 ^ max_cap17/A (sky130_fd_sc_hd__buf_1)
+     3    0.008576    0.111901    0.160727    3.900615 ^ max_cap17/X (sky130_fd_sc_hd__buf_1)
+                                                         net17 (net)
+                      0.111901    0.000022    3.900637 ^ _096_/A2 (sky130_fd_sc_hd__o31a_1)
+     2    0.007969    0.098685    0.177569    4.078207 ^ _096_/X (sky130_fd_sc_hd__o31a_1)
+                                                         _043_ (net)
+                      0.098685    0.000022    4.078228 ^ _100_/A (sky130_fd_sc_hd__xor2_1)
+     1    0.002234    0.103286    0.133128    4.211356 ^ _100_/X (sky130_fd_sc_hd__xor2_1)
+                                                         net15 (net)
+                      0.103286    0.000005    4.211361 ^ output15/A (sky130_fd_sc_hd__buf_2)
+     1    0.034650    0.172190    0.221108    4.432469 ^ output15/X (sky130_fd_sc_hd__buf_2)
+                                                         P[6] (net)
+                      0.172190    0.000270    4.432738 ^ P[6] (out)
+                                              4.432738   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -4.432738   data arrival time
+---------------------------------------------------------------------------------------------
+                                              3.317262   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_1v80: 0
+max fanout violation count 0
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_1v80: 0
+max cap violation count 0
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_1v80: 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

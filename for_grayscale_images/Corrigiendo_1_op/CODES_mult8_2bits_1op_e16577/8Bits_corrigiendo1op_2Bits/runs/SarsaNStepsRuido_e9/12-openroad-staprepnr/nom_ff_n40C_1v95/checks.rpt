@@ -1,0 +1,87 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+Startpoint: B[0] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: P[1] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 v input external delay
+     4    0.011528    0.018942    0.011555    2.011555 v B[0] (in)
+                                                         B[0] (net)
+                      0.018942    0.000000    2.011555 v _05_/A_N (sky130_fd_sc_hd__nand2b_2)
+     1    0.004144    0.031493    0.101253    2.112808 v _05_/Y (sky130_fd_sc_hd__nand2b_2)
+                                                         _03_ (net)
+                      0.031493    0.000000    2.112808 v _06_/A3 (sky130_fd_sc_hd__a31oi_2)
+     1    0.033442    0.355620    0.308439    2.421247 ^ _06_/Y (sky130_fd_sc_hd__a31oi_2)
+                                                         P[1] (net)
+                      0.355620    0.000000    2.421247 ^ P[1] (out)
+                                              2.421247   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -2.421247   data arrival time
+---------------------------------------------------------------------------------------------
+                                              5.328753   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_ff_n40C_1v95 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 13 unannotated drivers.
+ A[0]
+ A[1]
+ B[0]
+ B[1]
+ _04_/Y
+ _05_/Y
+ _06_/Y
+ _07_/Y
+ _08_/X
+ _09_/Y
+ _10_/Y
+ _11_/HI
+ _11_/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 unconstrained endpoint.
+  P[0]

@@ -1,0 +1,81 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= min_tt_025C_1v80 Corner ===================================
+
+Startpoint: B[1] (input port clocked by __VIRTUAL_CLK__)
+Endpoint: P[2] (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 ^ input external delay
+     1    0.002657    0.019121    0.009796    2.009796 ^ B[1] (in)
+                                                         B[1] (net)
+                      0.019121    0.000000    2.009796 ^ input3/A (sky130_fd_sc_hd__clkbuf_1)
+     2    0.004012    0.057359    0.081359    2.091155 ^ input3/X (sky130_fd_sc_hd__clkbuf_1)
+                                                         net3 (net)
+                      0.057359    0.000034    2.091189 ^ _1_/A (sky130_fd_sc_hd__and2_1)
+     1    0.002632    0.044699    0.112845    2.204034 ^ _1_/X (sky130_fd_sc_hd__and2_1)
+                                                         pp2 (net)
+                      0.044699    0.000024    2.204058 ^ _5_/A (sky130_fd_sc_hd__clkbuf_1)
+     1    0.005127    0.069770    0.099068    2.303126 ^ _5_/X (sky130_fd_sc_hd__clkbuf_1)
+                                                         net6 (net)
+                      0.069770    0.000080    2.303206 ^ output6/A (sky130_fd_sc_hd__buf_2)
+     1    0.033911    0.168528    0.206378    2.509584 ^ output6/X (sky130_fd_sc_hd__buf_2)
+                                                         P[2] (net)
+                      0.168528    0.000166    2.509749 ^ P[2] (out)
+                                              2.509749   data arrival time
+
+                      0.000000   10.000000   10.000000   clock __VIRTUAL_CLK__ (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                 -0.250000    9.750000   clock uncertainty
+                                  0.000000    9.750000   clock reconvergence pessimism
+                                 -2.000000    7.750000   output external delay
+                                              7.750000   data required time
+---------------------------------------------------------------------------------------------
+                                              7.750000   data required time
+                                             -2.509749   data arrival time
+---------------------------------------------------------------------------------------------
+                                              5.240251   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= min_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= min_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 1 unannotated drivers.
+ SARSANPASOS_VENTAJA_RUIDO_e8_7/HI
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 unconstrained endpoint.
+  P[3]
