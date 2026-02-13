@@ -5,6 +5,9 @@ module color#(parameter infile = "rahul_in_hex.hex", outfile = "rahul_out.hex", 
 		reg[7:0] memory[3*size-1:0];                          //making a vector of type 'reg' for storing data from input hex file
 		
 		integer image_in_r[rows-1:0][cols-1:0],image_in_g[rows-1:0][cols-1:0],image_in_b[rows-1:0][cols-1:0], dx = ksize/2,dy = ksize/2,c = ksize/2,i,j,k = 0,l,y,z,f;
+		reg  [7:0]  mult_A;
+		reg  [7:0]  mult_B;
+		wire [15:0] mult_P;
 		mult8_2bits_1op_e16917 u_mult (
 			.A(mult_A),
 			.B(mult_B),
