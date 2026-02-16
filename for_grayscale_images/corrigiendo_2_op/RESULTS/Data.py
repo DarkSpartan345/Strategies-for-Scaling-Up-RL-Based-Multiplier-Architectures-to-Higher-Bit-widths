@@ -46,8 +46,8 @@ def compute_metrics(ref, test):
     eps = 1e-12
 
     abs_err = np.abs(ref - test)
-    mae = np.mean(abs_err)
-    max_err = np.max(abs_err)
+    mae = np.mean(abs_err) #Obtiene MAE
+    max_err = np.max(abs_err) #Obtiene MAX
 
     mre = np.mean(abs_err / (np.abs(ref) + eps))
 
